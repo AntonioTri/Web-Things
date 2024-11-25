@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	body {
+		background-color: #f9f9f9;
+		justify-content:center;
+		align-items: center;
+	}
+
+	input {
+		border-radius: 5px;
+		border-color: lightgrey;
+		height: 20px;
+	}
+
+	label {
+		font-family: arial;
+		font-style: sans-serif;
+	}
+
+	.minilabel {
+		font-family: arial;
+		font-size: 13px;
+		color: grey;
+	}
+
+	select {
+		border-radius: 5px;
+		border-color: lightgrey;
+		height: 30px;
+	}
+
+</style>
+<head>
+	<title>Modulo ordine prodotti</title>
+</head>
+<body>
+<h1>Modulo Ordine Prodotto</h1>
+<label>I miei prodotti</label>
+<label class="minilabel">*clicca su quantita' per effettuare calcolo singolo</label>
+<form action="negozio.php" method="post">
+<table>
+	<tr>
+		<td>
+			<label>T-Shirt (€1.00)</label>
+			<input type="text" id="p1" value="0" placeholder="1.00€" disabled>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Quantita'</label>
+			<input type="text" name="qtn_1" id="qtn_1" onclick="calcolaprezzo()">
+			<label>Colore'</label>
+			<input type="text" name="colore" id="colore">
+			<label>Taglia'</label>
+			<input type="text" name="taglia" id="taglia">
+		</td>
+	</tr>
+		<tr>
+		<td>
+			<label>Felpa (€5.00)</label>
+			<input type="text" id="p2" value="0" placeholder="5.00€" disabled>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Quantita'</label>
+			<input type="text" name="qtn_2" id="qtn_2"  onclick="calcolaprezzo2()">
+			<label>Colore'</label>
+			<input type="text" name="colore" id="colore">
+			<label>Taglia'</label>
+			<input type="text" name="taglia" id="taglia">
+		</td>
+	</tr>
+	</tr>
+		<tr>
+		<td>
+			<label>Scarpe (€10.00)</label>
+			<input type="text" id="p3" value="0"ssss placeholder="10.00€" disabled>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Quantita'</label>
+			<input type="text" name="qtn_3" id="qtn_3" onclick="calcolaprezzo3()">
+			<label>Colore'</label>
+			<input type="text" name="colore" id="colore">
+			<label>Taglia'</label>
+			<input type="text" name="taglia" id="taglia">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Totale:</label>
+			<input type="text" id="tot" placeholder="totale" disabled>
+			<button type="button" onfocus="totale()">Calcola Totale</button>
+		</td>	
+
+	</tr>
+</table>
+<br><br>
+<table>
+	<tr>
+		<td>
+			<label>*Nome e Cognome</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="text" id="nome" placeholder="inserisci nome" required>
+			<input type="text" id="cognome" placeholder="inserisci cognome" required>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>*E-mail</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="text" id="email" placeholder="inserisci e-mail" required>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>*Contatto telefonico</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="text" id="telefono" placeholder="inserisci numero" required>
+		</td>
+	</tr>
+	</tr>
+	<tr>
+		<td>
+			<br><br>
+			<label>*Indirizzo Spedizione e Fatturazione</label>
+
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="text" id="indirizo1" placeholder="inserisci indirizzo" required>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label class="minilabel">Indirizzo 1</label>
+		</td>
+	</tr>
+		<tr>
+		<td>
+			<input type="text" id="citta" placeholder="inserisci citta'" required>
+			<select>
+				<option>Inserisci Provincia</option>
+				<option>Caserta</option>
+				<option>Napoli</option>
+				<option>Salerno</option>
+				<option>Benevento</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label class="minilabel">citta'</label>
+			<label class="minilabel">provincia</label>
+		</td>
+	</tr>
+
+		<tr>
+		<td>
+			<input type="text" id="cap" placeholder="inserisci cap" required>
+			<select>
+				<option>Inserisci Paese</option>
+				<option>Teverola</option>
+				<option>Caserta</option>
+				<option>Avellino</option>
+				<option>Ostia</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label class="minilabel">cap</label>
+			<label class="minilabel">paese</label>
+		</td>
+	</tr>
+</table>
+<br><br>
+<table>
+	<tr>
+		<td>
+			<label>L'indirizzo per la spedizione e' lo stesso di quello indicato per la fatturazione?</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="radio" name="scelta"><label>Si</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="radio" name="scelta"><label>No</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Stai inviando un regalo?</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="radio" name="scelta2"><label>Si</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="radio" name="scelta2"><label>No</label>
+		</td>
+	</tr>
+	<tr>
+
+		<td><br><br><label>Nome e cognome destinatario</label></td>
+	</tr>
+	<tr>
+		<td>
+			<input type="text" id="nome" placeholder="inserisci nome">
+			<input type="text" id="nome" placeholder="inserisci cognome">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<label class="minilabel">Nome</label>
+			<label class="minilabel">Cognome</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<br><br>
+			<label>Come hai saputo di noi?</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="checkbox" name="scelta"><label>Amici</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="checkbox" name="scelta"><label>Web</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="checkbox" name="scelta"><label>Altro</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<button style=" width: 90px; height: 40px" type="Reset">Reset</button>
+			<button style="background-color: green; width: 90px; height: 40px;" type="Submit">Invia Ordine</button>
+		</td>
+	</tr>
+</table>
+</form>
+
+
+<script type="text/javascript">
+	function calcolaprezzo(){
+		let prezzo1=document.getElementById("qtn_1").value*1;
+		document.getElementById("p1").value=prezzo1;
+	}
+
+	function calcolaprezzo2(){
+		let prezzo2=document.getElementById("qtn_2").value*5;
+		document.getElementById("p2").value=prezzo2;
+	}
+
+	function calcolaprezzo3(){
+		let prezzo3=document.getElementById("qtn_3").value*10;
+		document.getElementById("p3").value=prezzo3;
+	}
+
+	function totale() {
+		let totale=parseFloat(document.getElementById("p1").value)+parseFloat(document.getElementById("p2").value)+parseFloat(document.getElementById("p3").value);
+		document.getElementById("tot").value=totale;
+	}
+
+</script>
+
+</body>
+</html>
