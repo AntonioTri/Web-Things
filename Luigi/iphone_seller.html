@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>VENDITA IPHONE</title>
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <h1>LISTINO PREZZI</h1>
+        
+        <tabale>
+            <tr>
+                <td>
+                <select id="selezione_Iphone">
+                <option value="">-- Seleziona un modello --</option>
+                <option value="iphone_11.jpg">iPhone 11</option>
+                <option value="iphone_12.jpg">iPhone 12</option>
+                <option value="iphone_14.jpg">iPhone 14</option>
+                <option value="iphone_16.jpg">iPhone 16</option>
+                </select>
+            </td>
+
+            </tr>
+           
+            <tr>
+                <td>
+                    <button id="somma_prezzi">Somma</button>  
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <img src="" alt="" id="immagine">   
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <div id="prezzo_finale"></div>
+                </td>
+            </tr>
+            
+        </tabale>
+                   
+    </body>
+    <script>
+        function mostra_prezzo_iphone(){
+            const prezz1=500;
+            const prezz2=700;
+            const prezz3=900;
+            const prezz4=1350;
+            const somma_prezzi=document.getElementById("somma_prezzi");
+            const immagine=document.getElementById("immagine");
+            const prezzo_finale=document.getElementById("prezzo_finale");
+            const select=document.getElementById("selezione_Iphone");
+           
+            somma_prezzi.addEventListener("click",function(){
+                const immagine_iphone = select.options[select.selectedIndex].value;
+                if(immagine_iphone){
+                    immagine.src=immagine_iphone;
+                    
+                }else{
+                    immagine.src="";
+                   immagine.alt="immagine non trovata";
+
+                }
+
+            });
+
+        }
+        mostra_prezzo_iphone();
+        
+    </script>
+</html>

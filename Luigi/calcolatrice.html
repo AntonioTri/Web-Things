@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore di Addizione</title>
+
+</head>
+<body>
+    <h1>Calcolatore di Addizione</h1>
+
+    <!-- Input numeri -->
+    <input type="number" id="number1" placeholder="Numero 1">
+    <input type="number" id="number2" placeholder="Numero 2">
+    
+    <!-- Bottone per calcolare -->
+    <button id="calculateButton">Calcola</button>
+
+    <!--Risultato -->
+    <div id="result"></div>
+
+    <script>
+
+        // Si prendono gli elementi tramite gli id dichiarati nell'html
+        const num1 = document.getElementById("number1");
+        const num2 = document.getElementById("number2");
+        const button = document.getElementById("calculateButton");
+        const result = document.getElementById("result");
+
+        // Funzione per calcolare la somma
+        button.addEventListener("click", function() {
+            // Si converte il valore del primo input in numero
+            const value1 = parseFloat(num1.value); 
+            // Si converte il valore del secondo input in numero
+            const value2 = parseFloat(num2.value); 
+            
+            // si controlla se i valori sono validi, se si preme il bottone quando
+            // Non sono stati inseriti valori valore 1 e valore 2 sono NULLI
+            // Non avrebbe senos sommare due elementi che non esistono
+            if (isNaN(value1) || isNaN(value2)) {
+                result.textContent = "Per favore, inserisci due numeri validi.";
+                result.style.color = "red";
+
+            // Altrimneti se i valori non sono nulli, saranno dei numeri e quindi l'addizone si può fare
+            } else {
+                // Calcolo della somma
+                const sum = value1 + value2;
+                // Si inserisce il risultato nella variabile della somma
+                // NOTA BENE: Per inserire un valore in una componente con un testo va fatta 
+                // la traduzione a scritta con gli apici storti ` ` e con ${nome_variabile} per tradurre il numero in scritta
+                result.textContent = `Risultato: ${sum}`;
+            }
+        });
+
+    </script>
+</body>
+</html> -->

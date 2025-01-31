@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>AUTOMOBILE</title>
+        <style></style>
+
+    </head>
+    <body>
+        <select name="" id="car_selector">
+            <option value="ford">ford</option>
+            <option value="fiat">fiat</option>
+            <option value="suzuki">suzuki</option>
+            <option value="500">500</option>
+        </select>
+        <button id="prezzo_macchina">calcola</button>
+        <div id="prezzo_finale"></div>
+    </body>
+    <script>
+        function  mostra_prezzo(){
+            const pre1=10000;
+            const pre2=25000;
+            const pre3=18000;
+            const pre4=30000;
+            const prezzo_finale=document.getElementById("prezzo_finale");
+            const button=document.getElementById("prezzo_macchina");
+            
+            button.addEventListener("click",function(){
+
+                const macchina_scelta=document.getElementById("car_selector").value;
+                
+                switch (macchina_scelta) {
+                    case "ford":
+                        prezzo_finale.textContent=`${pre1}`;
+                        break;
+                    case "fiat":
+                        prezzo_finale.textContent=`${pre2}`;
+                        break;
+                    case "suzuki":
+                        prezzo_finale.textContent=`${pre3}`;
+                        break;
+                    case "500":
+                        prezzo_finale.textContent=`${pre4}`;
+                        break;
+                    
+                    default:
+                        break;
+                }
+
+            });
+        }
+
+
+        mostra_prezzo();
+    
+    </script>
+
+
+
+</html>

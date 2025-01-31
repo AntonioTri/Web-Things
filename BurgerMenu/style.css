@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Utilizzando il punto come operatore di accesso, accesiamo a tutti gli elementi di una stessa classe
+ Contenitore del menu e dell'icona */
+.menu-container {
+    position: relative;
+}
+
+/* Hamburger Icon */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1000;
+    margin: 20px;
+}
+
+.bar {
+    height: 5px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+/* Side menu che appare da destra */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Inizialmente il menu è nascosto */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.5s ease; /* Animazione per il menu a tendina */
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    text-align: center;
+    padding: 15px;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+
+/* Quando il menu è attivo, spostiamo il menu da destra */
+.side-menu.active {
+    right: 0;
+}
+
+
+/* Animazione per l'icona hamburger */
+.burger-menu.open .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.burger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}

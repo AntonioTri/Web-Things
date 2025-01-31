@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostra Dominio</title>
+    <script>
+        function mostraDominio() {
+            // Ottiene il protocollo (es. 'https:') e il dominio (es. 'www.example.com')
+            const dominio = `${window.location.protocol}//${window.location.host}`;
+            // Scrive il dominio nell'elemento con id "dominio"
+            document.getElementById('dominio').textContent = dominio;
+        }
+    </script>
+</head>
+<body onload="mostraDominio()">
+    <h1>Benvenuto!</h1>
+    <p>Il dominio di questa pagina è: <span id="dominio"></span></p>
+</body>
+</html>

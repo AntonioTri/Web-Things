@@ -1,0 +1,38 @@
+
+body{
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+
+
+}
+
+#check_mark_container{
+
+    background-color: rgb(109, 196, 23);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+
+
+#check_mark_canvas{
+
+
+    background-color: rgb(219, 35, 35);
+    position: relative;
+    transform: translate(0%, 0%);
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+
+
+}
+
+#check_mark_container:hover{
+    cursor: pointer;
+}
+
